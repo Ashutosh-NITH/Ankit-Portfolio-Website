@@ -1,0 +1,482 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+#header{
+    background-image: url(images/background8.png);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+.menu {
+    color: white;
+    display: none;
+    width: 20px;
+}
+#cross{
+    display: none;
+    width: 20px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 10% 0;
+
+}
+.logo{
+    margin-top: 10px;
+    position: relative;
+}
+.logo::before{
+    position: absolute;
+    content : "";
+    right: 16px;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #ff004f;
+    border-radius: 25px;
+    transition: 0.3s ease;
+    margin-bottom: 20px;
+
+}
+.logo:hover{
+    transition-delay: 0.4s;
+}
+.logo:hover::before{
+    width: 100%;
+}
+.bar{
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+    margin-top: -1%;
+
+}
+.button1{
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+}
+.button1::before{
+    position: absolute;
+    content : "";
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #ff004f;
+    border-radius: 25px;
+    transition: 0.3s ease;
+
+}
+.button1:hover{
+    transition-delay: 0.4s;
+}
+.button1:hover::before{
+    width: 100%
+}
+.intro{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+    margin: 10% 11% 10%;
+}
+.intro h2{
+    margin: 0px 0px 10px;
+    font-size: 60px;
+}
+.intro p{  
+    margin: 0px 0px 10px;
+    font-size: 20px;
+}
+.intro span{  
+    color: #ff004f;
+}
+.body{
+    background-color: #080808;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+}
+.services{
+    display: flex;
+    flex-direction: column;
+}
+.courses{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.mycourse{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 10% 0;
+    padding-top: 4%;
+    padding-bottom: 5%;
+    color: white;
+}
+.course-left{
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.course-left img{
+    width: 300px;
+    border: solid;
+    border-color: #ffffff;
+    border-radius: 5px;
+}
+.course-right{
+    font-size: 30px;
+}
+.course-right img{
+    width: 200px;
+    border-radius: 5px;
+}
+.course-right h2{
+    margin-top: 20px;
+}
+#toggle{
+    margin-left: 10%;
+    margin-top: 5%;
+    color: white;
+    font-size: 45px;
+
+}
+
+#see{
+    border: solid;
+    border-color: #ff004f;
+    border-width: 2px;
+    background-color: #080808;
+    padding: 10px;
+    border-radius: 3px;
+    color: white;
+    width: 150px;
+    margin-left: 45%;
+    cursor: pointer;
+    font-size: 12px;
+    height: 40px;
+    transition: 0.4s ease;
+
+}
+#see:hover{
+    width: 180px;
+    height: 50px;
+    font-size: 15px;
+}
+
+.less{
+    display: none;
+}
+#row2{
+    display: none;
+}
+#row3{
+    display: none;
+}
+.myservices{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: first baseline;
+    margin: 10px 10% 0;
+    padding-top: 4%;
+    padding-bottom: 5%;
+    color: white;
+}
+
+.card{
+    color: white;
+    background-color: #424242;
+    border-radius: 5px;
+    margin: 0px 40px 10px;
+    padding: 40px;
+    width: 600px;
+    transform: 0.4s ease;
+    transition: 0.4s ease;
+
+}
+.card:hover{
+    background-color: #ff004f;
+    transform: translateY(-10px);
+}
+.card img{
+    height: 50px;
+}
+.card h2{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.card div{
+    margin-top: 30px;
+}
+.card div:hover{
+    cursor: pointer;
+    
+}
+.work{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+.portfolio{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: first baseline;
+    margin: 10px 10% 0;
+    padding-top: 4%;
+    padding-bottom: 5%;
+    color: white;
+}
+.portfolio div{
+    transform: 0.4s ease;
+    transition: 0.4s ease;
+}
+.portfolio div:hover{
+    transform: translateY(-10px);
+}
+.portfolio img{
+    width: 300px;
+    margin: 10px 20px 10px;
+    border-radius: 10px;
+    flex: wrap;
+}
+.contact{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin: 10px 10% 10px;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+.contact-left{
+    flex-direction: column;
+    justify-content:left ;
+    color: white;
+    width: 100%;
+    max-width: 400px;
+
+}
+#contactme{
+    width: 100%;
+    font-size: 50px;
+    margin-bottom: 30px;
+
+}
+#email{
+    margin-bottom: 20px;
+}
+#phone{
+    margin-bottom: 20px;
+}
+#insta2{
+    width: 40px;
+    color: #ff004f;
+}
+#insta1:hover{
+    cursor: pointer;
+}
+#insta2:hover{
+    cursor: pointer;
+}
+.contact-right{
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+input{
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding: 20px;
+    width: 100%;
+    margin-top: 20px;
+    background-color: rgb(40, 40, 40);
+    color:white;
+    
+}
+#message{
+    height: 100px;
+}
+.submit{
+    margin: 20px 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff004f;
+    color: white;
+    padding: 10px;
+    width: 100px;
+
+}
+.submit:hover{
+    opacity: 0.7;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.submit:active{
+    opacity: 0.3;
+}
+#sent{
+    color: green;
+    margin-left: 10px;
+}
+#preloader{
+    z-index: 200;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: #000 url(images/preloader.gif) no-repeat center center ;
+}
+
+/* Responsive CSS for smartphones and tablets */
+
+@media only screen and (max-width : 1024px ) {
+    #header{
+        background-image: url(images/phone-backgroundAnkit.png);
+    }
+    nav {
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+        margin: 0 5% 0;
+    }
+    .menu{
+        display: flex;
+    
+    }
+    #cross{
+        display: flex;
+    }
+    .bar {
+        border-radius: 5px;
+        background-color: #ff004f;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 120px;
+        margin-top: 10px;
+    }
+
+    .intro {
+        align-items: flex-end;
+        text-align: end;
+        margin: 5% 5% 10%;
+    }
+
+    .intro h2 {
+        font-size: 35px;
+    }
+
+    .intro p {
+        font-size: 16px;
+    }
+
+    .mycourse,
+    .myservices,
+    .portfolio,
+    .contact {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 5%;
+    }
+
+    .course-left img,
+    .portfolio img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .course-right {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .course-right img {
+        width: 150px;
+    }
+
+    .card {
+        width: 100%;
+        margin: 20px auto 10px;
+    }
+
+    #toggle {
+        font-size: 30px;
+        text-align: center;
+        margin: 30px 0 10px;
+    }
+
+    #see{
+        margin-left: 32%;
+    }
+    .less{
+    display: none;
+    }
+    #row2{
+        display: none;
+    }
+    #row3{
+        display: none;
+    }
+    .contact {
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .contact-left {
+        text-align: center;
+    }
+
+    .contact-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px auto 20px;
+        width: 100%;
+    }
+    
+    input {
+        padding: 15px;
+    }
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Ankit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Dancing+Script:wght@400..700&family=Gloria+Hallelujah&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+</head>
+</head>
+<body>
+    <div id="preloader"></div>
+    <div id="header">
+        <nav>
+            <div class="bar">
+                <a class="button1" href="#header">Home</a>
+                <a class="button1" href="#courses">Courses</a>
+                <a class="button1" href="#services">Services</a>
+                <a class="button1" href="#work">Portfolio</a>
+                <a class="button1" href="#contact">Contact</a>
+                <img src="images/cross.png"  id="cross">
+            </div>
+            <div class="logo" >
+                <img src="images/logoAnkit.png">
+            </div>
+            <img class="menu" src="images/menu.png">
+        </nav>
+        <div class="intro">
+            <h2>Hi,</h2>
+            <h2>I'm <span>Ankit</span> </h2>
+            <p>Professional Artist</p>
+            <img id="insta1" width="40px" src="images/instagram (1).png">
+        </div>
+    </div>
+
+
+    <div class="body">
+        
+        <div id="courses" class="courses">
+        <h2 id="toggle">My Courses</h2>
+        <div class="mycourse">
+            <div class="course-left">
+                <div class="tumbnail">
+                <img src="images/thumb4.jpg">
+                </div>
+            </div>
+            <div class="course-right">
+                <img src="images/udemy.jpg">
+                <h2>Oil Painting Course</h2>
+                <h2>Coming Soon .. </h2>
+            </div>
+        </div>
+        </div>
+
+        <div id="services" class="services">
+        <h2 id="toggle">My Services</h2>
+        <div class="myservices">
+            <div class="card">
+                <img src="images/paint__1_-removebg-preview.png">
+                <h2>Oil Painting Commision</h2>
+                <img src="images/paint-removebg-preview.png">
+                <h2>Sketch Commision</h2>
+                <p>Order commision artwork deliver at your doorstep anywhere in India</p>
+            </div>
+            <!-- <div class="card">
+                <img src="images/paint__2_-removebg-preview.png">
+                <h2>Water Color Painting Commision</h2>
+                <p>Order commision artwork deliver at your doorstep anywhere in India</p>
+            </div> -->
+        </div>
+        </div>
+        <div id="work" class="work">
+            <h2 id="toggle">My Portfolio</h2>
+            <div class="portfolio">
+                <div><img src="images/1.jpg"></div>
+                <div><img src="images/2.jpg"></div>
+                <div><img src="images/3.jpg"></div>
+            </div>
+            <div id="row2" class="portfolio">
+                <div><img src="images/4.jpg"></div>
+                <div><img src="images/5.jpg"></div>
+                <div><img src="images/6.jpg"></div>
+            </div>
+            <div id="row3" class="portfolio">
+                <div><img src="images/7.jpg"></div>
+                <div><img src="images/8.jpg"></div>
+                <div><img src="images/9.jpg"></div>
+            </div>
+            <button class="more" id="see">See More</button>
+            <button class="less" id="see">See Less</button>
+        </div>
+        <div id="contact" class="contact">
+            <div class="contact-left">
+                <div id="contactme">Contact Me</div>
+                <div id="email">ankitkumarlfs9999@gmail.com</div>
+                <div id="phone" href="#">+91 6289120599</div>
+                <div ><img id="insta2" src="images/instagram (1).png"></div>
+            </div>
+            <div >
+                <form name="submit-to-google-sheet" class="contact-right">
+                    <input name="name" id="username" type="text" placeholder="Enter Name">
+                    <input name="number" id="number" type="number" placeholder="Phone Number">
+                    <input name="message"  id="message" type="text" placeholder="Enter Message">
+                    <input name="email" id="useremail" type="email"  placeholder="Email" >
+                    <button type="submit" class="submit">Submit</button>
+                    <span id="sent"></span>
+                </form>
+            </div>
+        </div>
+    </div>
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzpVrpZAkOn2tDbtDcKvxldkfMteBjFvD09Am7BirOugDf0bxo3QlKR2_K1GO0Z-jAeVQ/exec"
+  const form = document.forms['submit-to-google-sheet']
+  const sent = document.querySelector("#sent")
+
+  const username = document.getElementById("username")
+  const number = document.getElementById("number")
+  const useremail = document.getElementById("useremail")
+
+
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    if(username.value.trim() == "" || number.value.trim() =="" ){
+        sent.innerHTML = "please enter name phone number"
+        setTimeout( ()=> {
+            sent.innerHTML = ""
+        } , 4000 )
+    }else{ 
+        
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        form.reset()
+        sent.innerHTML = "message sent successfully !"
+        setTimeout( ()=> {
+            sent.innerHTML = ""
+        } , 4000 )
+
+      })
+      .catch(error => console.error('Error!', error.message))
+    }
+  })
+</script>
+</body>
+<script src="index.js"></script>
+</html>
